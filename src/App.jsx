@@ -5,6 +5,5 @@ function App() {
     </>
   );
 }
-q;
 
 export default App;
