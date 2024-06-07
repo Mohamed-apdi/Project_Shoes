@@ -28,7 +28,7 @@ const Header = () => {
                 <Heart className="text-2xl" />
                 
                 </div>
-                <p className="text-sm font-semibold">Favorites</p>
+                <p className="text-sm font-semibold">Favorite</p>
                 </div>
                 <div className="profile">
                     <img className="w-10 h-10 rounded-full" src="/public/images/sheos.jpg" alt="profile" />
