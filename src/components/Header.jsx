@@ -15,20 +15,20 @@ const Header = () => {
             <div className="flex justify-between gap-5">
 
 
-                <div className="flex flex-col">
+                <div className="flex flex-col items-center">
                 <div  className="cart relative">
                 <CgShoppingBag className="text-2xl" />
                 <span className="items-center absolute top-[-14px] right-[-8px] rounded-full border px-[7px] bg-yellow-300 py-[1.5px] text-xs font-semibold transition-colors ">4</span>
                 </div>
-                <p>cart</p>
+                <p className="text-sm font-semibold">cart</p>
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col items-center">
                 <div  className="wishlist">
                 <Heart className="text-2xl" />
                 
                 </div>
-                <p>cart</p>
+                <p className="text-sm font-semibold">Favorites</p>
                 </div>
                 <div className="profile">
                     <img className="w-10 h-10 rounded-full" src="/public/images/sheos.jpg" alt="profile" />
