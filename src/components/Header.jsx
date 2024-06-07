@@ -23,7 +23,7 @@ const Header = () => {
                   4
                 </span>
               </div>
-              <p className="text-sm font-semibold">cart</p>
+              <p className="text-sm font-semibold">carts</p>
             </div>
 
             <div className="flex flex-col items-center">
