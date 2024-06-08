@@ -1,7 +1,10 @@
+import Header from "./components/Header";
+
 function App() {
   return (
     <>
-      <h1>moha</h1>
+    <Header/>
+      <h1 className="text-red-500">moha</h1>
     </>
   );
 }
