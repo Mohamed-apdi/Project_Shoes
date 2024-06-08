@@ -4,7 +4,6 @@ function App() {
   return (
     <>
     <Header/>
-      <h1 className="text-red-500">moha</h1>
     </>
   );
 }
