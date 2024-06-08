@@ -1,5 +1,4 @@
-import { Facebook, FacebookIcon, Linkedin, Twitter } from "lucide-react";
-import React from "react";
+
 import {
   PiBehanceLogo,
   PiFacebookLogo,
@@ -7,9 +6,10 @@ import {
   PiPinterestLogo,
   PiTwitterLogo,
 } from "react-icons/pi";
-
+import { Element } from 'react-scroll';
 const Footer = () => {
   return (
+    <Element name="about-section">
     <div className="container p-2 max-w-screen-xl">
       <div className="flex justify-between px-6 items-center bg-gray-950 py-3 rounded-2xl">
         <div className="flex items-center gap-4">
@@ -37,6 +37,7 @@ const Footer = () => {
       </div>
       <p className="text-white">hello my friendos</p>
     </div>
+    </Element>
   );
 };
 
