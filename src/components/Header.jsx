@@ -2,22 +2,23 @@ import { ChevronDown, Heart, Search, X } from "lucide-react";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isShopOpen, setIsShopOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <>
-      <div className="container p-2 ">
-        <div className="flex justify-between px-6 items-center bg-gray-100 py-3 rounded-2xl">
+      <div className="container p-2 max-w-screen-xl">
+        <div className="flex justify-between px-6 items-center bg-gray-200 py-3 rounded-2xl">
           <div className="flex items-center gap-4">
             <img className="w-20 h-16" src="/public/images/jordan-logo-rpreview.png" alt="logo" />
         
           <div className="items-center">
             <ul className="flex items-center gap-4 cursor-pointer text-black/80 text-sm font-sans font-semibold">
-              <li className="font-bold">HOME</li>
+              <li className="font-bold"><Link to="/">HOME</Link></li>
               <div>
-              <li onMouseEnter={() => setIsShopOpen(true)} onMouseLeave={() => setIsShopOpen(false)} className="relative items-center py-2">SHOP <ChevronDown className="inline-block w-5"/></li>
+              <li onMouseEnter={() => setIsShopOpen(true)} onMouseLeave={() => setIsShopOpen(false)} className="relative items-center py-2">SHOP<ChevronDown className="inline-block w-5"/></li>
               <CSSTransition
                     in={isShopOpen}
                     timeout={3000}
@@ -29,14 +30,14 @@ const Header = () => {
                       onMouseEnter={() => setIsShopOpen(true)}
                       onMouseLeave={() => setIsShopOpen(false)}
                     >
-                      <li className="block px-4 py-2 hover:underline hover:translate-x-0.5 transition-all">Nike</li>
-                      <li className="block px-4 py-2 hover:underline hover:translate-x-0.5  transition-all">Jordan</li>
-                      <li className="block px-4 py-2 hover:underline hover:translate-x-0.5  transition-all">Adidas</li>
+                      <li className="block px-4 py-2 hover:underline hover:translate-x-0.5 transition-all"><Link to="/nike">Nike</Link></li>
+                      <li className="block px-4 py-2 hover:underline hover:translate-x-0.5  transition-all"><Link to="/jordan">Jordan</Link></li>
+                      <li className="block px-4 py-2 hover:underline hover:translate-x-0.5  transition-all"><Link to="/adidas">Adidas</Link></li>
                     </div>
                   </CSSTransition>
               </div>
-              <li>ABOUT</li>
-              <li>CONTACT</li>
+              <li><Link to="/about">ABOUT</Link></li>
+              <li><Link to="/contact">CONTACT</Link></li>
             </ul>
           </div>
           </div>
@@ -70,7 +71,7 @@ const Header = () => {
             </div>
 
               <div className="Cart relative">
-                <IoBagHandleOutline className="text-2xl" />
+                <Link to="/cart"><IoBagHandleOutline className="text-2xl" /></Link>
                 <span className="items-center absolute top-[-12px] text-white right-[-7px] rounded-full border px-[5px] 
                  bg-green-500
                 py-[1px] text-xs font-semibold transition-colors">
@@ -78,16 +79,10 @@ const Header = () => {
                 </span>
               </div>
               <div className="Favorites">
-                <Heart className="text-2xl" />
+                <Link to="/favorites"><Heart className="text-2xl" /></Link>
               </div>
-            <div className="profile">
-              {/* <img
-                className="w-10 h-10 rounded-full"
-                src="/public/images/sheos.jpg"
-                alt="profile"
-              /> */}
-              <button className="text-md font-bold hover:underline">Login</button>
-            </div>
+              <button className="text-md font-bold hover:underline"><Link to="/login">Login</Link></button>
+            
           </div>
         </div>
       </div>
