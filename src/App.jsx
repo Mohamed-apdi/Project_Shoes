@@ -3,7 +3,9 @@ import Header from "./components/Header";
 function App() {
   return (
     <>
-    <Header/>
+      <div className="w-screen">
+        <Header />
+      </div>
     </>
   );
 }
