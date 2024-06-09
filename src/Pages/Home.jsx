@@ -175,7 +175,13 @@ const Home = () => {
         </div>
       </div>
 
-      <section className="NewArrival container flex p-2 max-w-screen-xl gap-3 items-center">
+      <motion.section
+        className="NewArrival container flex p-2 max-w-screen-xl gap-3 items-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
         <div className="flex-1 bg-gray-200 flex flex-col rounded-xl p-2 items-center">
           <img
             className="w-[200px] h-40"
@@ -204,9 +210,15 @@ const Home = () => {
             alt=""
           />
         </div>
-      </section>
+      </motion.section>
 
-      <section className="NewArrival-second line container flex p-2 max-w-screen-xl gap-4 items-center">
+      <motion.section
+        className="NewArrival-second line container flex p-2 max-w-screen-xl gap-3 items-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
         <div className="flex-1 bg-gray-200 flex flex-col rounded-xl p-2 items-center">
           <img
             className="w-[200px] h-40"
@@ -235,9 +247,15 @@ const Home = () => {
             alt=""
           />
         </div>
-      </section>
+      </motion.section>
 
-      <section className="details container p-2 flex gap-4 max-w-screen-xl">
+      <motion.section
+        className="details container p-2 flex gap-4 max-w-screen-xl"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
         <div className="w-1/3 bg-gray-200 rounded-xl flex flex-col items-center py-8">
           <span className="bg-white w-20 h-20 rounded-full flex items-center justify-center">
             <PiVan className="text-[37px]" />
@@ -268,7 +286,7 @@ const Home = () => {
           </p>
           <p className="text-[15px] text-gray-500 ">to your doorstep.</p>
         </div>
-      </section>
+      </motion.section>
 
       <div className="flex justify-between px-2">
         <p className="font-bold text-[40px]">Blog Post</p>
@@ -278,7 +296,13 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <section className="plog post container p-2 max-w-screen-xl flex gap-4">
+      <motion.section
+        className="plog post container p-2 max-w-screen-xl flex gap-4"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
         <div className="w-1/3 bg-gray-200 flex flex-col items-center py-4 pb-5  rounded-xl">
           <img
             className=" w-[330px] h-[200px] rounded-lg"
@@ -324,44 +348,49 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </section>
-      <motion.section>
-        <section className="sign-up-letter container max-w-screen-xl p-2 flex gap-2">
-          <div className="bg-gray-200 w-1/2 rounded-xl flex flex-col items-center justify-center">
-            <PiTelegramLogoFill className="mt-12 text-[24px]" />
-            <p className="text-[30px] font-bold">Sign up for our newsletter</p>
-            <div className="flex mt-3">
-              <input
-                className="bg-gray-100 border-[2px] border-black w-[300px] rounded-tl-lg rounded-bl-lg placeholder:pl-3 placeholder:text-black"
-                type="text"
-                placeholder="Enter your email..."
-              />
-              <button className="bg-black text-white p-2 rounded-tr-lg rounded-br-lg px-8 ">
-                Submit
-              </button>
-            </div>
-            <p className="text-[14px] px-12 py-4 pl-14 pb-14">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt
-              corrupti fugiat totam consequatur dolores eos sint amet corporis
-            </p>
+      </motion.section>
+
+      <motion.section
+        className="sign-up-letter container max-w-screen-xl p-2 flex gap-2"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <div className="bg-gray-200 w-1/2 rounded-xl flex flex-col items-center justify-center">
+          <PiTelegramLogoFill className="mt-12 text-[24px]" />
+          <p className="text-[30px] font-bold">Sign up for our newsletter</p>
+          <div className="flex mt-3">
+            <input
+              className="bg-gray-100 border-[2px] border-black w-[300px] rounded-tl-lg rounded-bl-lg placeholder:pl-3 placeholder:text-black"
+              type="text"
+              placeholder="Enter your email..."
+            />
+            <button className="bg-black text-white p-2 rounded-tr-lg rounded-br-lg px-8 ">
+              Submit
+            </button>
           </div>
-          <div className="relative w-1/2">
-            <video
-              ref={videoRef}
-              className="w-full rounded-xl"
-              src="/public/videos/videoplayback.mp4"
-              onClick={handleVideoClick}
-              onPause={handleVideoPause}
-              onPlay={() => setIsPlaying(true)}
-            ></video>
-            {!isPlaying && (
-              <FaCirclePlay
-                className="absolute text-white text-6xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
-                onClick={handlePlayButtonClick}
-              />
-            )}
-          </div>
-        </section>
+          <p className="text-[14px] px-12 py-4 pl-14 pb-14">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt
+            corrupti fugiat totam consequatur dolores eos sint amet corporis
+          </p>
+        </div>
+        <div className="relative w-1/2">
+          <video
+            ref={videoRef}
+            className="w-full rounded-xl"
+            src="/public/videos/videoplayback.mp4"
+            onClick={handleVideoClick}
+            onPause={handleVideoPause}
+            onPlay={() => setIsPlaying(true)}
+          ></video>
+          {!isPlaying && (
+            <FaCirclePlay
+              className="absolute text-white text-6xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+              onClick={handlePlayButtonClick}
+            />
+          )}
+        </div>
       </motion.section>
     </>
   );
