@@ -1,9 +1,9 @@
 import { ChevronDown, Heart, Search, X } from "lucide-react";
 import { IoBagHandleOutline } from "react-icons/io5";
-import { useState } from 'react';
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Link as ScrollLink } from 'react-scroll';
+import { Link as ScrollLink } from "react-scroll";
 const Header = () => {
   const [isShopOpen, setIsShopOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -25,22 +25,29 @@ const Header = () => {
       <div className="container p-2 max-w-screen-xl">
         <div className="flex justify-between px-6 items-center bg-gray-200 rounded-2xl">
           <div className="flex items-center gap-4">
-            <img className="w-20 h-16" src="/public/images/jordan-logo-rpreview.png" alt="logo" />
+            <img
+              className="w-20 h-16"
+              src="/public/images/jordan-logo-rpreview.png"
+              alt="logo"
+            />
             <div className="items-center">
               <ul className="flex items-center gap-4 cursor-pointer text-black/80 text-sm font-sans font-semibold">
-                <li className="font-bold"><Link to="/">HOME</Link></li>
+                <li className="font-bold">
+                  <Link to="/">HOME</Link>
+                </li>
                 <div>
                   <li
                     onMouseEnter={() => setIsShopOpen(true)}
                     onMouseLeave={() => setIsShopOpen(false)}
                     className="relative items-center py-2"
                   >
-                    SHOP<ChevronDown className="inline-block w-5" />
+                    SHOP
+                    <ChevronDown className="inline-block w-5" />
                   </li>
                   <AnimatePresence>
                     {isShopOpen && (
                       <motion.div
-                        className="absolute mt-3 w-48 bg-white text-black rounded-md shadow-lg"
+                        className="absolute mt-3 w-48 bg-white z-10 text-black rounded-md shadow-lg"
                         variants={dropdownVariants}
                         initial="hidden"
                         animate="visible"
@@ -61,8 +68,14 @@ const Header = () => {
                     )}
                   </AnimatePresence>
                 </div>
-                <li><ScrollLink to="about-section" smooth={true} duration={1000}>ABOUT</ScrollLink></li>
-                <li><Link to="/contact">CONTACT</Link></li>
+                <li>
+                  <ScrollLink to="about-section" smooth={true} duration={1000}>
+                    ABOUT
+                  </ScrollLink>
+                </li>
+                <li>
+                  <Link to="/contact">CONTACT</Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -87,21 +100,33 @@ const Header = () => {
                 )}
               </AnimatePresence>
               {isSearchOpen ? (
-                <X className="text-2xl cursor-pointer" onClick={() => setIsSearchOpen(false)} />
+                <X
+                  className="text-2xl cursor-pointer"
+                  onClick={() => setIsSearchOpen(false)}
+                />
               ) : (
-                <Search className="text-2xl cursor-pointer" onClick={() => setIsSearchOpen(true)} />
+                <Search
+                  className="text-2xl cursor-pointer"
+                  onClick={() => setIsSearchOpen(true)}
+                />
               )}
             </div>
             <div className="Cart relative">
-              <Link to="/cart"><IoBagHandleOutline className="text-2xl" /></Link>
+              <Link to="/cart">
+                <IoBagHandleOutline className="text-2xl" />
+              </Link>
               <span className="items-center absolute top-[-12px] text-white right-[-7px] rounded-full border px-[5px] bg-green-500 py-[1px] text-xs font-semibold transition-colors">
                 0
               </span>
             </div>
             <div className="Favorites">
-              <Link to="/favorites"><Heart className="text-2xl" /></Link>
+              <Link to="/favorites">
+                <Heart className="text-2xl" />
+              </Link>
             </div>
-            <button className="text-md font-bold hover:underline"><Link to="/login">Login</Link></button>
+            <button className="text-md font-bold hover:underline">
+              <Link to="/login">Login</Link>
+            </button>
           </div>
         </div>
       </div>
